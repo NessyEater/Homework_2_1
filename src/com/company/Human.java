@@ -12,16 +12,22 @@ public class Human implements Main.Actions {
         else { System.out.println("Введены некорректные данные"); }
         this.name = name;
     }
-    public int    getRunningSkill() { return runningSkill; }
-    public int    getJumpingSkill(){ return jumpingSkill; }
-    public String getName()         { return name; }
+    public String getName() {
+        return name;
+    }
 
     public boolean running(Treadmill treadmill){
-        if(treadmill.getDistance() <= runningSkill){ return true; }
+        if(treadmill.getDistance() <= runningSkill){
+            return true;
+        }
         else{ return false; }
     }
     public boolean jumping(Wall wall){
-        if(wall.getHeight() <= jumpingSkill){ return true; }
-        else{ return false; }
+        if(wall.getHeight() <= jumpingSkill){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

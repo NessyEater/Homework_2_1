@@ -9,14 +9,14 @@ public class Main {
         Object [] obstacleArray = new Object[6];
         obstacleArray[0] = new Treadmill(100);
         obstacleArray[1] = new Treadmill(200);
-        obstacleArray[2] = new Wall(1);
-        obstacleArray[3] = new Wall(2);
+        obstacleArray[2] = new Wall     (1);
+        obstacleArray[3] = new Wall     (2);
         obstacleArray[4] = new Treadmill(323);
-        obstacleArray[5] = new Wall(3);
+        obstacleArray[5] = new Wall     (3);
 
         Object [] participantsArray = new Object[3];
-        participantsArray[0] = new Human(200, 1, "Лорд Вейдер");
-        participantsArray[1] = new Cat(100,2,"Мурзик");
+        participantsArray[0] = new Human(200, 1,"Лорд Вейдер");
+        participantsArray[1] = new Cat  (100, 2,"Мурзик");
         participantsArray[2] = new Robot(1000,4,"Робонатор");
 
 
@@ -34,7 +34,7 @@ public class Main {
                 }
                 else{
                     Wall wall = (Wall)obstacleArray[j];
-                    if (running(participantsArray[i], wall)){
+                    if (jumping(participantsArray[i], wall)){
                         System.out.println("Следующее препятсвие");
                     }
                     else{
@@ -91,7 +91,7 @@ public class Main {
         }
         return false;
     }
-    public static boolean running(Object participant, Wall wall){
+    public static boolean jumping(Object participant, Wall wall){
         if (participant instanceof Human) {
             Human human = (Human)participant;
             if(human.jumping(wall)){
