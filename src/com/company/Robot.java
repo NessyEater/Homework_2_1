@@ -12,9 +12,9 @@ public class Robot {
         else { System.out.println("Введены некорректные данные"); }
         this.name = name;
     }
-    public String getName(){
-        return name;
-    }
+    public String getName()     { return name; }
+    public int getRunningSkill(){ return runningSkill; }
+    public int getJumpingSkill(){ return jumpingSkill; }
 
     public boolean running(Treadmill treadmill){
         if(treadmill.getDistance() <= runningSkill){
